@@ -6,5 +6,18 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-User.create!(email: 'test@email.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-AdminUser.create!(email: 'root@localhost', password: 'password', password_confirmation: 'password') if Rails.env.development?
+if Doorkeeper::Application.count.zero?
+  Doorkeeper::Application.create!(name: 'Web Client', redirect_uri: '', scopes: '')
+  # Doorkeeper::Application.create!(name: 'Mobile Client', redirect_uri: '', scopes: '')
+end
+
+
+User.first_or_create(email: 'test@email.com', 
+  password: 'password', 
+  password_confirmation: 'password'
+) if Rails.env.development?
+
+AdminUser.first_or_create(email: 'root@localhost', 
+  password: 'password', 
+  password_confirmation: 'password'
+) if Rails.env.development?

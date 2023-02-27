@@ -5,4 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :documents
+
+  validates :email, format: URI::MailTo::EMAIL_REGEXP
+
+  # authenticate from devise
+  def self.authenticate(email, password)
+    user = User.find_for_authentication(email: email)
+    user&.valid_password?(password) ? user : nil
+  end
 end
