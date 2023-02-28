@@ -27,7 +27,11 @@
     <%# TODO: put below two p tags into a notice partial %>
     <%# <p class="notice"><%= notice %>
     <%# <p class="alert"><%= alert %>
-    <%= yield %>
+    <%= render "shared/header" %>
+    <main>
+      <%= yield %>
+    </main>
+    <%= render "shared/footer" %>
 
     <%= javascript_include_tag "bootstrap.bundle.min.js" %>
     <%= javascript_include_tag "tiny-slider.js" %>
