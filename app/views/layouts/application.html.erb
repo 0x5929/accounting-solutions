@@ -2,19 +2,40 @@
 <html>
   <head>
     <title>AccountingSolutions</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Open+Sans:wght@400;700&display=swap" %>
+    <%= stylesheet_link_tag "template/css/fonts/icomoon/style.css" %>
+    <%= stylesheet_link_tag "template/css/fonts/flaticon/font/flaticon.css" %>
+    <%= stylesheet_link_tag "template/css/bootstrap" %>
+    <%= stylesheet_link_tag "template/css/tiny-slider.css" %>
+    <%= stylesheet_link_tag "template/css/glightbox.min.css" %>
+    <%= stylesheet_link_tag "template/css/aos.css" %>
+    <%= stylesheet_link_tag "template/css/style.css" %>
+
   </head>
 
   <body>
 
     <%# TODO: put below two p tags into a notice partial %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%# <p class="notice"><%= notice %>
+    <%# <p class="alert"><%= alert %>
     <%= yield %>
+
+    <%= javascript_include_tag "bootstrap.bundle.min.js" %>
+    <%= javascript_include_tag "tiny-slider.js" %>
+    <%= javascript_include_tag "aos.js" %>
+    <%= javascript_include_tag "navbar.js" %>
+    <%= javascript_include_tag "counter.js" %>
+    <%= javascript_include_tag "glightbox.min.js" %>
+    <%= javascript_include_tag "custom.js" %>
+    
   </body>
 </html>
