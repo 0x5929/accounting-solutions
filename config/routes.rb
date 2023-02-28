@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # root
-  root 'site#index'
+  root 'pages#index'
   
   # gem created urls
   use_doorkeeper
@@ -12,10 +12,10 @@ Rails.application.routes.draw do
   resources :documents
   
   # site urls
-  get 'index', to: 'site#index'
-  get 'about', to: 'site#about'
-  get 'services', to: 'site#services'
-  get 'contact', to: 'site#contact'
+  get 'index', to: 'pages#index'
+  get 'about', to: 'pages#about'
+  get 'services', to: 'pages#services'
+  get 'contact', to: 'pages#contact'
 
   # api urls
   namespace :api do

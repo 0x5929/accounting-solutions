@@ -1,23 +1,23 @@
 require "test_helper"
 
-class SiteControllerTest < ActionDispatch::IntegrationTest
+class pagesControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get site_index_url
+    get pages_index_url
     assert_response :success
   end
 
   test "should get about" do
-    get site_about_url
+    get pages_about_url
     assert_response :success
   end
 
   test "should get services" do
-    get site_services_url
+    get pages_services_url
     assert_response :success
   end
 
   test "should get contact" do
-    get site_contact_url
+    get pages_contact_url
     assert_response :success
   end
 end

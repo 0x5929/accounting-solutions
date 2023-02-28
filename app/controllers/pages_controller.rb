@@ -1,4 +1,4 @@
-class SiteController < ApplicationController
+class PagesController < ApplicationController
   def index
     @application = Doorkeeper::Application.find_by(name: 'Web Client')
 
