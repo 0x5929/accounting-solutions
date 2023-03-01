@@ -11,14 +11,16 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
-    <%= stylesheet_link_tag "https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Open+Sans:wght@400;700&display=swap" %>
-    <%= stylesheet_link_tag "template/css/fonts/icomoon/style.css" %>
-    <%= stylesheet_link_tag "template/css/fonts/flaticon/font/flaticon.css" %>
-    <%= stylesheet_link_tag "template/css/bootstrap" %>
-    <%= stylesheet_link_tag "template/css/tiny-slider.css" %>
-    <%= stylesheet_link_tag "template/css/glightbox.min.css" %>
-    <%= stylesheet_link_tag "template/css/aos.css" %>
-    <%= stylesheet_link_tag "template/css/style.css" %>
+    <%= stylesheet_link_tag(
+          "https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Open+Sans:wght@400;700&display=swap",
+          "template/css/fonts/icomoon/style.css",
+          "template/css/fonts/flaticon/font/flaticon.css",
+          "template/css/bootstrap",
+          "template/css/tiny-slider.css",
+          "template/css/glightbox.min.css",
+          "template/css/aos.css",
+          "template/css/style.css"
+    )%>
 
   </head>
 
@@ -34,13 +36,16 @@
     </main>
     <%= render "shared/footer" %>
 
-    <%= javascript_include_tag "bootstrap.bundle.min.js" %>
-    <%= javascript_include_tag "tiny-slider.js" %>
-    <%= javascript_include_tag "aos.js" %>
-    <%= javascript_include_tag "navbar.js" %>
-    <%= javascript_include_tag "counter.js" %>
-    <%= javascript_include_tag "glightbox.min.js" %>
-    <%= javascript_include_tag "custom.js" %>
+
+    <%= javascript_include_tag(
+          "bootstrap.bundle.min.js",
+          "tiny-slider.js",
+          "aos.js",
+          "navbar.js",
+          "counter.js",
+          "glightbox.min.js",
+          "custom.js"
+    )%>
     
   </body>
 </html>
