@@ -10,12 +10,14 @@ class PagesController < ApplicationController
     # }
   end
 
-  def about
-  end
+  def about; end
 
-  def services
-  end
+  def services; end
 
-  def contact
+  def contact; end
+
+  def send_contact
+    ContactMailer.with(email: params[:email], subject: params[:subject], msg: params[:message]).contact_email.deliver_now
+    redirect_to root_path
   end
 end
