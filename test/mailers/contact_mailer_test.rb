@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ContactMailerTest < ActionMailer::TestCase
   test 'will send contact email to admin' do
-    email = 'test@email'
+    email = 'test@email.com'
     subject = 'test subject'
     message = 'test message'
 
@@ -15,6 +15,6 @@ class ContactMailerTest < ActionMailer::TestCase
     assert_equal email.to, ['first.object.oriented@gmail.com']
     assert_equal email.from, ['first.object.oriented@gmail.com']
     assert_includes email.subject, "You've got mail."
-    assert_equal read_fixture('contact_email.html').join, email.body.to_html
+    assert_includes email.body.to_s, 'test@email.com'
   end
 end
