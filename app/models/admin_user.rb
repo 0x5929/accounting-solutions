@@ -6,5 +6,4 @@ class AdminUser < ApplicationRecord
 
   validates :email, :password, presence: true
   validates :email, format: URI::MailTo::EMAIL_REGEXP
-  validates :email, uniqueness: true
 end
