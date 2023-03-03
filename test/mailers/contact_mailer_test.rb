@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ContactMailerTest < ActionMailer::TestCase
-  test 'will send contact email to admin' do
+  test 'will send contact email to admin if values are set' do
     email = 'test@email.com'
     subject = 'test subject'
     message = 'test message'

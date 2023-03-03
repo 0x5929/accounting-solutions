@@ -1,6 +1,9 @@
 class ContactMailer < ApplicationMailer
+  include ActiveModel::Validations
+
   default from: 'first.object.oriented@gmail.com'
   default to: 'first.object.oriented@gmail.com'
+
   def contact_email
     @customer_email = params[:email]
     @msg = params[:message]

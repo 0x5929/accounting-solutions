@@ -17,9 +17,21 @@ class PagesController < ApplicationController
   def contact; end
 
   def send_contact
-    ContactMailer.with(email: params[:email], subject: params[:subject], msg: params[:message])
-                 .contact_email
-                 .deliver_now
-    redirect_to root_path
+    # pass in for validation
+    @contact_msg = Message.new({ 
+      email: params[:email], 
+      subject: params[:subject], 
+      message: params[:message] 
+    })
+    
+    if @contact_msg.valid?
+      ContactMailer.with(email: params[:email], subject: params[:subject], msg: params[:message])
+                   .contact_email
+                   .deliver_now
+      redirect_to root_path
+    else
+      redirect_to contact_path
+    end
+
   end
 end
