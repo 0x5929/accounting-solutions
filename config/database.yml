@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: accounting_solutions_production
-  username: accounting_solutions
-  password: <%= ENV["ACCOUNTING_SOLUTIONS_DATABASE_PASSWORD"] %>
+  username: <%= ENV["POSTGRES_DATABASE_USERNAME"] %>
+  password: <%= ENV["POSTGRES_DATABASE_PASSWORD"] %>

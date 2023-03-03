@@ -36,6 +36,17 @@ Requirements:
 - edit database file: `PROJECT_ROOT/config/database.yml`, enter credentials for database
 - while editting this file, you may enter any environment variables in the system or relative to project
   - env variables such as database credentials, etc..
+
+```Bash
+DATABASE_URL=<database-url-string-version>
+RAILS_MASTER_KEY=<located-config-master-key>
+RACK_ENV=production
+RAILS_ENV=production
+RAILS_LOG_TO_STDOUT=enabled
+RAILS_SERVE_STATIC_FILES=enabled
+
+```
+
 - `$ rake db:drop && rake db:prepare` to create fresh database
 - if in production environment, do the following: `$ rails console`
 
