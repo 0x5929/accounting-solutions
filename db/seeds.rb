@@ -4,8 +4,9 @@ if Doorkeeper::Application.count.zero?
   # Doorkeeper::Application.create!(name: 'Mobile Client', redirect_uri: '', scopes: '')
 end
 
-# User and AdminUser from devise
 if Rails.env.development?
+
+  # User and AdminUser from devise
   User.first_or_create(
     email: 'test@email.com', 
     password: 'password', 
@@ -16,6 +17,14 @@ if Rails.env.development?
     password: 'password', 
     password_confirmation: 'password'
   ) 
-end
 
-# Document resource objects
+  # Document resource objects
+  5.times do |i|
+    Document.create!(
+      user_id: User.all.first.id, 
+      id: i, 
+      file_name: "sample file name number #{i}", 
+      file_location: "sample file location #{i}"
+    )
+  end
+end
